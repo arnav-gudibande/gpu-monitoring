@@ -1,6 +1,8 @@
 # gpu-monitoring
 ssh instance nvidia-gpu monitoring on macOS with BitBar
 
+<img width="273" alt="Screen Shot 2020-04-10 at 1 17 16 PM" src="https://user-images.githubusercontent.com/15108659/79020528-e9887380-7b2d-11ea-80c9-89b9b6959e37.png">
+
 ## Installation
 1. `brew cask install bitbar`
 2. `git clone https://github.com/arnav-gudibande/gpu-monitoring.git`
