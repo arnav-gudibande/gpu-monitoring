@@ -58,16 +58,17 @@ PCIE_GPU_ICON = ('iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6Q
                  'su17Kuf76KlNUvevf+e9vnn6wf9pBf4BZd5O0exv758AAAAASUVORK5CYII=')
 
 def main():
-    user_name = 'arnav'
-    instance_name = 'server.local'
+    user_name = 'USERNAME'
+    instance_name = 'INSTANCENAME'
+    gpu_id = 0
     cmd = "ssh {}@{} \'nvidia-smi\'".format(user_name, instance_name).split(" ")
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     tmp = proc.stdout.read()
     upStatus = str(tmp).find('Could not resolve')
 
     if upStatus == -1:
-        nameIdx = str(tmp).find("GeForce")
-        name = str(tmp[nameIdx-9:nameIdx+7])[2:-1]
+        nameIdx = str(tmp).find("|   {}".format(gpu_id)) + 6
+        name = str(tmp[nameIdx-9:nameIdx+10])[2:-1]
 
         result = str(tmp[594:656])[2:]
         logs = list(filter(lambda x: x != '', result.split()))
