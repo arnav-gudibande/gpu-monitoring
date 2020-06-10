@@ -1,4 +1,4 @@
-#!/usr/bin/env PYTHONIOENCODING=UTF-8 /Users/Arnav_Gudibande/anaconda3/bin/python3
+#!/usr/bin/env PYTHONIOENCODING=UTF-8 /your/path/to/python
 import subprocess
 import plistlib
 
